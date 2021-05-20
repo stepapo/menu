@@ -1,0 +1,27 @@
+{
+	"name": "stepapo/menu",
+	"type": "library",
+	"description": "Component for Nette Framework, that helps generate menus with links and action buttons.",
+	"keywords": ["nette", "menu", "component"],
+	"homepage": "https://github.com/stepapo/menu",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Štěpán Postler"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/stepapo/menu/issues"
+	},
+	"require": {
+		"php": ">=8.0",
+		"nette/application": "^3.1",
+		"nette/neon": "^3.0",
+		"nette/utils": "^3.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Stepapo\\Menu\\": "src/"
+		}
+	}
+}
