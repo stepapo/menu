@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Stepapo\Menu\UI;
 
 use Nette\Application\UI\Control;
+use Nette\Application\UI\Template;
+use Nette\Localization\Translator;
 use Nette\Neon\Neon;
 use Nette\Utils\FileSystem;
 use Stepapo\Menu\Button;
@@ -21,6 +23,7 @@ class Menu extends Control
 		private array $buttons = [],
 		private array $actions = [],
 		private ?string $templateFile = null,
+		private ?Translator $translator = null,
 	) {}
 
 
@@ -48,7 +51,18 @@ class Menu extends Control
 		if (array_key_exists('templateFile', $config)) {
 			$menu->setTemplateFile($config['templateFile']);
 		}
+		if (array_key_exists('translator', $config)) {
+			$menu->setTemplateFile($config['translator']);
+		}
 		return $menu;
+	}
+
+
+	protected function createTemplate(): Template
+	{
+		$template = parent::createTemplate();
+		$template->setTranslator($this->translator);
+		return $template;
 	}
 
 
@@ -74,9 +88,16 @@ class Menu extends Control
 	}
 
 
-	public function setTemplateFile(?string $templateFile): self
+	public function setTemplateFile(?string $templateFile): Menu
 	{
 		$this->templateFile = $templateFile;
+		return $this;
+	}
+
+
+	public function setTranslator(?Translator $translator): Menu
+	{
+		$this->translator = $translator;
 		return $this;
 	}
 }
