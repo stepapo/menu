@@ -5,7 +5,7 @@
 		{if $button->destination}
 			<a href="{plink $button->destination ...$button->parameters}">{_$button->label}</a>
 		{elseif $button->selector}
-			<a href="#" data-toggle="modal" data-target="{$button->selector}"></a>
+			<a href="#" data-toggle="modal" data-target="{$button->selector}">{_$button->label}</a>
 		{elseif $button->buttons}
 			<button>{_$button->label}</button>
 			<ul>
@@ -23,7 +23,7 @@
 		{if $button->destination}
 			<a href="{plink $button->destination ...$button->parameters}">{_$button->label}</a>
 		{elseif $button->selector}
-			<a href="#" data-toggle="modal" data-target="{$button->selector}"></a>
+			<a href="#" data-toggle="modal" data-target="{$button->selector}">{_$button->label}</a>
 		{elseif $button->buttons}
 			<button>{_$button->label}</button>
 			<ul>
@@ -31,7 +31,7 @@
 					{if $subButton->destination}
 						<a href="{plink $subButton->destination ...$subButton->parameters}">{_$subButton->label}</a>
 					{elseif $subButton->selector}
-						<a href="#" data-toggle="modal" data-target="{$subButton->selector}">{_$subButton->label}</a>git
+						<a href="#" data-toggle="modal" data-target="{$subButton->selector}">{_$subButton->label}</a>
 					{/}
 				</li>
 			</ul>
