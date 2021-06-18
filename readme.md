@@ -10,16 +10,16 @@ Let's create a menu with three links. Administration link is hidden for non-admi
 
 ```neon
 buttons:
-	-
-		label: Homepage
-		destination: Home:default
-	-
-		label: About us
-		destination: About:default
-	-
-		label: Administration
-		destination: Admin:default
-		hide: %hideAdmin%
+    -
+        label: Homepage
+        destination: Home:default
+    -
+        label: About us
+        destination: About:default
+    -
+        label: Administration
+        destination: Admin:default
+        hide: %hideAdmin%
 ```
 
 ### Component
@@ -27,9 +27,9 @@ buttons:
 ```php
 public function createComponentMainMenu()
 {
-	return Stepapo\Menu\UI\Menu::createFromNeon(__DIR__ . '/mainMenu.neon', [
-		'hideAdmin' => !$this->user->isInRole('admin')
-	]);
+    return Stepapo\Menu\UI\Menu::createFromNeon(__DIR__ . '/mainMenu.neon', [
+        'hideAdmin' => !$this->user->isInRole('admin')
+    ]);
 }
 ```
 
@@ -45,11 +45,11 @@ public function createComponentMainMenu()
 
 ```neon
 buttons:
-	- # include Button configuration
-	- # include Button configuration
+    - # include Button configuration
+    - # include Button configuration
 actions:
-	- # include Button configuration
-	- # include Button configuration
+    - # include Button configuration
+    - # include Button configuration
 templateFile:
 translator:
 ```
@@ -67,7 +67,7 @@ ajax:
 history:
 hide:
 buttons:
-	- # include Button configuration
-	- # include Button configuration
+    - # include Button configuration
+    - # include Button configuration
 ```
 
