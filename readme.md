@@ -50,23 +50,22 @@ buttons:
 actions:
 	- # include Button configuration
 	- # include Button configuration
-templateFile: %file%
-translator: %translator%
+templateFile:
+translator:
 ```
 
 ### Button
 
 ```neon
-label: Domů
-destination: Home:default
+label:
+destination:
 parameters:
-	id: 1
-selector: add-modal
-icon: fa fa-home
-type: highlight
-ajax: false
-history: false
-hide: false
+selector:
+icon:
+type:
+ajax:
+history:
+hide:
 buttons:
 	- # include Button configuration
 	- # include Button configuration
