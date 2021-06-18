@@ -1,6 +1,6 @@
 # Menu
 
-Component for Nette Framework, that helps generate menus with links and action buttons. The docs show basic example and explains ways of configurating menus.
+Component for Nette Framework, that helps generate menus with links and action buttons. The docs show basic example and explain ways of configurating menus.
 
 ## Example
 
