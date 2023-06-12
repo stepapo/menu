@@ -63,6 +63,7 @@ parameters:
 selector:
 icon:
 type:
+confimationText:
 ajax:
 history:
 hide:
