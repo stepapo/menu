@@ -3,17 +3,17 @@
 <ul n:if="$buttons || $actions">
 	<li n:foreach="$buttons as $button" n:if="!$button->hide">
 		{if $button->destination}
-			<a href="{plink $button->destination ...$button->parameters}">{_$button->label}</a>
+			<a href="{plink $button->destination ...$button->parameters}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$button->label}</a>
 		{elseif $button->selector}
-			<a href="#" data-toggle="modal" data-target="{$button->selector}">{_$button->label}</a>
+			<a href="#" data-toggle="modal" data-target="{$button->selector}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$button->label}</a>
 		{elseif $button->buttons}
 			<button>{_$button->label}</button>
 			<ul>
 				<li n:foreach="$button->buttons as $subButton" n:if="!$button->hide">
 					{if $subButton->destination}
-						<a href="{plink $subButton->destination ...$subButton->parameters}">{_$subButton->label}</a>
+						<a href="{plink $subButton->destination ...$subButton->parameters}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$subButton->label}</a>
 					{elseif $subButton->selector}
-						<a href="#" data-toggle="modal" data-target="{$subButton->selector}">{_$subButton->label}</a>
+						<a href="#" data-toggle="modal" data-target="{$subButton->selector}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$subButton->label}</a>
 					{/}
 				</li>
 			</ul>
@@ -21,17 +21,17 @@
 	</li>
 	<li n:foreach="$actions as $button" n:if="!$button->hide">
 		{if $button->destination}
-			<a href="{plink $button->destination ...$button->parameters}">{_$button->label}</a>
+			<a href="{plink $button->destination ...$button->parameters}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$button->label}</a>
 		{elseif $button->selector}
-			<a href="#" data-toggle="modal" data-target="{$button->selector}">{_$button->label}</a>
+			<a href="#" data-toggle="modal" data-target="{$button->selector}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$button->label}</a>
 		{elseif $button->buttons}
 			<button>{_$button->label}</button>
 			<ul>
 				<li n:foreach="$button->buttons as $subButton">
 					{if $subButton->destination}
-						<a href="{plink $subButton->destination ...$subButton->parameters}">{_$subButton->label}</a>
+						<a href="{plink $subButton->destination ...$subButton->parameters}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$subButton->label}</a>
 					{elseif $subButton->selector}
-						<a href="#" data-toggle="modal" data-target="{$subButton->selector}">{_$subButton->label}</a>
+						<a href="#" data-toggle="modal" data-target="{$subButton->selector}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$subButton->label}</a>
 					{/}
 				</li>
 			</ul>
