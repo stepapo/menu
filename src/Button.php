@@ -15,6 +15,7 @@ class Button
 		public ?string $selector = null,
 		public ?string $icon = null,
 		public ?string $type = null,
+		public ?string $confirmationText = null,
 		public bool $ajax = false,
 		public bool $history = false,
 		public bool $hide = false,
@@ -42,6 +43,9 @@ class Button
 		}
 		if (array_key_exists('type', $config)) {
 			$button->setType($config['type']);
+		}
+		if (array_key_exists('confirmationText', $config)) {
+			$button->setConfirmationText($config['confirmationText']);
 		}
 		if (array_key_exists('ajax', $config)) {
 			$button->setAjax($config['ajax']);
@@ -99,6 +103,13 @@ class Button
 	public function setType(?string $type): Button
 	{
 		$this->type = $type;
+		return $this;
+	}
+
+
+	public function setConfirmationText(?string $confirmationText): Button
+	{
+		$this->confirmationText = $confirmationText;
 		return $this;
 	}
 
