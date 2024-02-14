@@ -58,9 +58,9 @@ class Menu extends Control
 	}
 
 
-	protected function createTemplate(): Template
+	protected function createTemplate(?string $class = null): Template
 	{
-		$template = parent::createTemplate();
+		$template = parent::createTemplate($class);
 		$template->setTranslator($this->translator);
 		return $template;
 	}
