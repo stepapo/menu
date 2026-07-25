@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Stepapo\Menu\Control;
 
-use App\AppsModule\Lib\Menu\Config\Menu;
 use Nette\Application\UI\Control;
+use Stepapo\Menu\Config\Menu;
 
 
 /** @property MenuTemplate $template */
