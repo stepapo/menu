@@ -8,7 +8,7 @@ Let's create a menu with three links. Administration link is hidden for non-admi
 
 ### Definition
 
-```neon
+```yml
 buttons:
     -
         label: Homepage
@@ -25,11 +25,12 @@ buttons:
 ### Component
 
 ```php
-public function createComponentMainMenu()
+public function createComponentMainMenu(): MenuControl
 {
-    return Stepapo\Menu\UI\Menu::createFromNeon(__DIR__ . '/mainMenu.neon', [
+    $menu = Menu::createFromNeon(__DIR__ . '/mainMenu.yml', [
         'hideAdmin' => !$this->user->isInRole('admin')
     ]);
+    return new MenuControl($menu);
 }
 ```
 
@@ -43,7 +44,7 @@ public function createComponentMainMenu()
 
 ### Menu
 
-```neon
+```yml
 buttons:
     - # include Button configuration
     - # include Button configuration
@@ -56,7 +57,7 @@ translator:
 
 ### Button
 
-```neon
+```yml
 label:
 destination:
 parameters:
