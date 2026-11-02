@@ -11,6 +11,7 @@ class Button extends Config
 {
 	public ?string $label = null;
 	public ?string $destination = null;
+	public ?array $attributes = null;
 	public array $parameters = [];
 	public ?string $selector = null;
 	public ?string $icon = null;
