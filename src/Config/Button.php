@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Stepapo\Menu\Config;
 
+use Stepapo\Utils\Attribute\ArrayOfType;
 use Stepapo\Utils\Config;
 
 
@@ -20,5 +21,5 @@ class Button extends Config
 	public bool $ajax = false;
 	public bool $history = false;
 	public bool $hide = false;
-	public array $buttons = [];
+	/** @var Button[] */ #[ArrayOfType(Button::class)] public array $buttons = [];
 }
