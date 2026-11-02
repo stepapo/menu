@@ -21,6 +21,7 @@ class MenuControl extends Control
 	{
 		$this->template->buttons = $this->menu->buttons;
 		$this->template->actions = $this->menu->actions;
+		$this->template->presenter = $this->getPresenter();
 		$this->template->render($this->menu->templateFile ?: __DIR__ . '/menu.latte');
 	}
 }
