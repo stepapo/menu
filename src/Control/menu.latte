@@ -6,14 +6,18 @@
 			<a href="{plink $button->destination ...$button->parameters}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$button->label}</a>
 		{elseif $button->selector}
 			<a href="#" data-toggle="modal" data-target="{$button->selector}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$button->label}</a>
+		{elseif $button->attibutes}
+			<button n:attr="$button->attributes" data-toggle="modal" data-target="{$button->selector}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$button->label}</button>
 		{elseif $button->buttons}
 			<button>{_$button->label}</button>
 			<ul>
-				<li n:foreach="$button->buttons as $subButton" n:if="!$button->hide">
+				<li n:foreach="$button->buttons as $subButton" n:if="!$subButton->hide">
 					{if $subButton->destination}
-						<a href="{plink $subButton->destination ...$subButton->parameters}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$subButton->label}</a>
+						<a href="{plink $subButton->destination ...$subButton->parameters}"{if $subButton->confirmationText} data-confirmation="{$subButton->confirmationText}"{/}>{_$subButton->label}</a>
 					{elseif $subButton->selector}
-						<a href="#" data-toggle="modal" data-target="{$subButton->selector}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$subButton->label}</a>
+						<a href="#" data-toggle="modal" data-target="{$subButton->selector}"{if $subButton->confirmationText} data-confirmation="{$subButton->confirmationText}"{/}>{_$subButton->label}</a>
+					{elseif $subButton->attributes}
+						<button n:attr="$subButton->attributes" data-toggle="modal" data-target="{$subButton->selector}"{if $subButton->confirmationText} data-confirmation="{$subButton->confirmationText}"{/}>{_$subButton->label}</button>
 					{/}
 				</li>
 			</ul>
@@ -24,14 +28,18 @@
 			<a href="{plink $button->destination ...$button->parameters}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$button->label}</a>
 		{elseif $button->selector}
 			<a href="#" data-toggle="modal" data-target="{$button->selector}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$button->label}</a>
+		{elseif $button->attibutes}
+			<button n:attr="$button->attributes" data-toggle="modal" data-target="{$button->selector}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$button->label}</button>
 		{elseif $button->buttons}
 			<button>{_$button->label}</button>
 			<ul>
-				<li n:foreach="$button->buttons as $subButton">
+				<li n:foreach="$button->buttons as $subButton" n:if="!$subButton->hide">
 					{if $subButton->destination}
-						<a href="{plink $subButton->destination ...$subButton->parameters}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$subButton->label}</a>
+						<a href="{plink $subButton->destination ...$subButton->parameters}"{if $subButton->confirmationText} data-confirmation="{$subButton->confirmationText}"{/}>{_$subButton->label}</a>
 					{elseif $subButton->selector}
-						<a href="#" data-toggle="modal" data-target="{$subButton->selector}"{if $button->confirmationText} data-confirmation="{$button->confirmationText}"{/}>{_$subButton->label}</a>
+						<a href="#" data-toggle="modal" data-target="{$subButton->selector}"{if $subButton->confirmationText} data-confirmation="{$subButton->confirmationText}"{/}>{_$subButton->label}</a>
+					{elseif $subButton->attributes}
+						<button n:attr="$subButton->attributes" data-toggle="modal" data-target="{$subButton->selector}"{if $subButton->confirmationText} data-confirmation="{$subButton->confirmationText}"{/}>{_$subButton->label}</button>
 					{/}
 				</li>
 			</ul>
